@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Shodan - Die Suche fürs Internet</title>
+
+		<script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+		<script src="http://127.0.0.1:3000/socket.io-stream.js"></script>
+		<script src="http://127.0.0.1:3000/terminal.js"></script>
+		
+		<style type="text/css">
+		@font-face {
+			font-family: 'Lato';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Lato Regular'), local('Lato-Regular'), url(assets/lato.woff2) format('woff2');
+		}
+		@font-face {
+			font-family: 'Lato';
+			font-style: normal;
+			font-weight: 700;
+			src: local('Lato Bold'), local('Lato-Bold'), url(assets/lato-bold.woff2) format('woff2');
+		}
+		.remark-slide { display: table; border-bottom: 20px solid #BE473C; }
+		.remark-slide-content { color: #444; display: table-cell; vertical-align: middle; font-family: 'Lato'; font-size: 150%; }
+		.remark-slide-number { display: none; }
+		.remark-slide-content h1 { color: #BE473C; }
+		.remark-slide-content a { color: #BE473C; text-decoration: none; }
+		.remark-slide-content li { margin-bottom: 10px; }
+		.remark-slide-content li ul li { margin-bottom: 0px; }
+		.remark-slide-content code { background: #333; color: #FFF; padding: 2px 10px; border-radius: 5px}
+		.remark-slide-content td { vertical-align: top; }
+		.remark-slide-content table { width: 100%;}
+		.remark-slide-content pre { background: #333; color: #FFF; padding: 10px 10px; border-radius: 5px; }
+		.remark-slide-content pre code { padding: 0px; }
+		.footnote { position: absolute; bottom: 40px; right: 40px;}
+		.background { background-image: url(images/shodan-map.png); background-size: cover !important; }
+		.termslide { display: flex; justify-content: center; align-items: center; height: 100%; }
+		.termslide h1 { position: absolute; top: -10px; left: 90px; }
+		.terminaljs { background: #FFF; color: #000; font-family: Monospace; display:inline-block; font-size: 110%; outline: 0px; }
+		.resume { position: absolute; bottom: 0px; right: 0px; height: 100px; width: 100px; z-index: 999; }
+		.pause { position: absolute; bottom: 0px; left: 0px; height: 100px; width: 100px; z-index: 999; }
+		@page { size: 1210px 681px; margin: 0; }
+		@media print { .remark-slide-scaler { width: 100% !important; height: 100% !important;transform: scale(1) !important;top: 0 !important;left: 0 !important;} }
+	</style>
+	</head>
+	<body>
+		<textarea id="source">
+# ~~Google~~ Shodan - Die Suche fürs Internet
+## Sascha Ohms
+
+---
+# Was ist Shodan?
+* ein Crawler für öffentlich erreichbare Geräte im Internet
+* Indiziert keinen Web-Content, sondern Banner
+* stellt einfaches Interface zum Durchsuchen der Daten bereit
+* scannt 300+ Ports pro IP
+* von verschiedenen Servern weltweit
+
+---
+
+# Was macht Shodan noch?
+* Egeien Echtzeit-Scans über IP Ranges / Internet
+* jene Daten in Echtzeit zur Verfügung stellen
+* Historische Daten über IPs speichern
+* Statistiken / Reports erstellen
+* Scanhub
+
+---
+
+class: background
+
+---
+
+background-image: url(images/startpage.png)
+
+---
+
+background-image: url(images/searchmongodb.png)
+
+---
+
+background-image: url(images/searchproftpd.png)
+
+---
+
+background-image: url(images/searchminecraft.png)
+
+---
+
+background-image: url(images/searchvuln.png)
+
+---
+
+background-image: url(images/screenshot.png)
+
+---
+
+class: termslide
+# Shodan CLI
+<div class="terminaljs" data-rows="20" data-columns="80"></div>
+
+---
+
+background-image: url(images/report2.png)
+
+---
+
+background-image: url(images/report.png)
+
+---
+
+# Quellen
+* https://www.defcon.org/images/defcon-18/dc-18-presentations/Schearer/DEFCON-18-Schearer-SHODAN.pdf
+* https://developer.shodan.io/api
+		</textarea>
+		<div class="resume" onmouseover="slideshow.resume();"></div>
+		<div class="pause" onmouseover="slideshow.pause();"></div>
+		<script src="assets/remark.js"></script>
+		<script>
+			var slideshow = remark.create({ ratio: '16:9' });
+			slideshow.on('showSlide', function(slide) {
+				if (slide.properties.class == "termslide") {
+					slideshow.pause();
+				}
+			});
+		</script>
+		<script src="http://127.0.0.1:3000/webterm.js"></script>
+	</body>
+</html>
